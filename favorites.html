@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<!--
+  favorites.html — the favorites page.
+  What you see: a "My favorites" title and under it a grid of cards with
+  all the products marked with a heart. If there are none — a message with
+  a "Keep shopping" link.
+  The grid is built by js/favorites.js into the empty div.
+-->
+
+  <!-- Head: settings you do not see on the screen — Hebrew encoding, the
+       browser tab title, the small tab icon (favicon) and the link to the main CSS file -->
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>מועדפים — מרקט פלוס</title>
+  <link rel="icon" href="assets/logos/logo-icon.png">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body data-page="favorites">
+
+  <!-- The header (the sticky white top bar with the logo, menu, search and icons).
+       This div is empty on purpose — js/header.js fills it when the page loads -->
+  <div id="site-header"></div>
+
+  <!-- Main: the central content area of the page -->
+  <main>
+    <div id="page-content">
+
+      <!-- The title and the empty root where the favorites grid is built -->
+      <h1 class="section-title" style="font-size:26px;margin-bottom:20px;">המועדפים שלי</h1>
+      <div id="favorites-page-root"></div>
+    </div>
+  </main>
+
+  <!-- The footer (the dark bar at the bottom with the brands strip and contact info).
+       Also empty — js/ui.js builds it through header.js -->
+  <div id="site-footer"></div>
+
+  <!-- Loading the JavaScript files. The order matters: first the base files
+       (api, storage, utils, ui, router) and only then the files that use them -->
+  <script src="js/api.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/favorites.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/header.js"></script>
+</body>
+</html>

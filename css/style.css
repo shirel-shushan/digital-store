@@ -1,0 +1,16 @@
+/*
+    style.css — an old file from a previous version of the site
+    (written in packed lines).
+
+    Note: this file is NOT imported in main.css, so it has no effect
+    at all on how the site looks today. The active version of these
+    styles was split into variables.css, reset.css, layout.css,
+    header.css and footer.css. Kept here only as a backup.
+*/
+/* Variables */
+:root{--cream:#faf7f2;--paper:#fff;--ink:#1c1a17;--muted:#8b8579;--line:#e8e2d9;--rust:#c1440e;--sand:#f2ede4}*{box-sizing:border-box}html{scroll-behavior:smooth}/* Global */
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Heebo,sans-serif}a{color:inherit;text-decoration:none}button,input{font:inherit}.container{width:min(1280px,calc(100% - 40px));margin:auto}.hidden{display:none!important}/* Header */
+.site-header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}.header-inner{min-height:78px;display:flex;align-items:center;gap:22px}.store-logo{width:56px;height:56px;flex:none}.store-logo svg{width:100%;height:100%;fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.main-nav{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:600;color:#4a453e}.main-nav a{padding:8px 2px}.main-nav .active{color:var(--rust);border-bottom:1px solid var(--rust)}.search-form{position:relative;flex:1;margin-right:auto}.search-form input{width:100%;padding:10px 40px 10px 14px;border:1px solid var(--line);border-radius:20px;background:var(--cream);outline:none}.search-form button{position:absolute;right:8px;top:4px;border:0;background:none;font-size:23px;color:var(--muted)}.header-actions{display:flex;align-items:center;gap:16px;direction:ltr}.header-actions a{position:relative;font-size:21px;padding:5px}.header-actions b{position:absolute;top:-3px;right:-5px;min-width:18px;padding:2px 5px;border-radius:10px;background:var(--rust);color:#fff;font-size:10px;text-align:center}/* Main Layout */
+.page-main{padding-top:28px;padding-bottom:72px}/* Sections */
+.store-section{margin-bottom:40px}.section-title{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:16px}.section-title h2{margin:0;font-family:"Frank Ruhl Libre",serif;font-size:24px}.section-title button{border:0;background:none;color:var(--rust);font-weight:600;cursor:pointer}.status-message{padding:10px 14px;margin-bottom:12px;background:#f9e9df;color:#783316;border-radius:8px}.empty-state{text-align:center;padding:45px;color:var(--muted)}/* Footer */
+footer{background:var(--ink);color:#cfc9c0;padding:45px 0 18px}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:50px}.footer-grid>div{display:flex;flex-direction:column;align-items:flex-start;gap:8px}.footer-grid strong,.footer-logo{color:#fff}.footer-logo{font-family:"Frank Ruhl Libre",serif;font-size:22px;font-weight:700}.footer-grid p,.footer-grid a,.footer-grid span{font-size:13px}.copyright{border-top:1px solid #393530;margin-top:35px;padding-top:16px;font-size:12px;color:#817a72}

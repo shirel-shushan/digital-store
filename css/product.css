@@ -1,0 +1,337 @@
+/*
+    This file styles the single product page.
+
+    Visually: a split into two columns — the image gallery (a big image
+    and a row of small images where the chosen one gets an orange border)
+    next to the product details (name, price, description, quantity
+    picker, add to cart button and a details table), and at the bottom
+    the customer review cards.
+*/
+
+
+/* =====================================================
+   Product Layout — splitting the page into two columns: gallery next to details
+===================================================== */
+
+/* Main product layout */
+
+.product-detail {
+
+    /* Two-column layout */
+    display: grid;
+
+    grid-template-columns:
+        minmax(260px, 1fr)
+        minmax(280px, 1.2fr);
+
+    gap: 36px;
+
+    margin-bottom: 44px;
+}
+
+
+
+/* =====================================================
+   Product Gallery — the big product image
+===================================================== */
+
+/* Main product image */
+
+.product-gallery-main {
+
+    width: 100%;
+
+    /* Keep image square */
+    aspect-ratio: 1;
+
+    background: var(--color-bg-alt);
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    margin-bottom: 12px;
+}
+
+
+/* Product image */
+
+.product-gallery-main img {
+
+    width: 100%;
+
+    height: 100%;
+
+    /* Fill the image area */
+    object-fit: cover;
+}
+
+
+
+/* =====================================================
+   Product Thumbnails — the row of small images (the chosen one gets an orange border)
+===================================================== */
+
+/* Thumbnail list */
+
+.product-thumbs {
+
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+}
+
+
+/* Single thumbnail */
+
+.product-thumb {
+
+    width: 64px;
+
+    height: 64px;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    border: 2px solid transparent;
+
+    background: none;
+
+    padding: 0;
+}
+
+
+/* Selected thumbnail */
+
+.product-thumb.active {
+
+    border-color: var(--color-accent);
+}
+
+
+/* Thumbnail image */
+
+.product-thumb img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+/* =====================================================
+   Product Information — brand, product name, price and description
+===================================================== */
+
+/* Product brand */
+
+.product-brand {
+
+    font-size: 13px;
+
+    color: var(--color-text-light);
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 6px;
+}
+
+
+/* Product title */
+
+.product-title {
+
+    font-family: var(--font-heading);
+
+    font-size: clamp(22px, 3vw, 30px);
+
+    font-weight: 700;
+
+    margin-bottom: 12px;
+}
+
+
+/* Product price */
+
+.product-price {
+
+    font-size: 26px;
+
+    font-weight: 800;
+
+    color: var(--color-accent);
+
+    margin-bottom: 16px;
+}
+
+
+/* Product description */
+
+.product-description {
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    color: var(--color-text-muted);
+
+    margin-bottom: 20px;
+}
+
+
+
+/* =====================================================
+   Buy Section — the buy row: the + / − quantity picker and the "Add to cart" button
+===================================================== */
+
+/* Buy buttons */
+
+.product-buy-row {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Main buttons */
+
+.product-buy-row
+.btn-accent,
+
+.product-buy-row
+.btn-dark {
+
+    flex: 1;
+
+    padding: 12px 20px;
+
+    font-size: 15px;
+}
+
+
+/* Stock information */
+
+.product-stock {
+
+    font-size: 14px;
+
+    color: var(--color-text-muted);
+}
+
+
+
+/* =====================================================
+   Product Details — the extra details table (weight, sizes, warranty...)
+===================================================== */
+
+/* Product information list */
+
+.product-meta {
+
+    margin-top: 20px;
+
+    border-top: 1px solid
+        var(--color-border-alt);
+
+    padding-top: 16px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill,
+        minmax(140px,1fr));
+
+    gap: 10px;
+
+    font-size: 13px;
+
+    color: var(--color-text-muted);
+}
+/* =====================================================
+   Product Reviews — the reviews area at the bottom of the page
+===================================================== */
+
+/* Reviews title */
+
+.reviews-title {
+
+    font-family: var(--font-heading);
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    margin-bottom: 16px;
+}
+
+
+/* Reviews list */
+
+.reviews-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+
+/* =====================================================
+   Review Card — one review card: name, stars and comment
+===================================================== */
+/* Single review */
+.review-card {
+
+    background: var(--color-surface);
+      border: 1px solid var(--color-border-alt);
+
+    border-radius: 10px;
+
+    padding: 14px 16px;
+}
+/* Review header */
+.review-head {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 6px;
+}
+/* Customer name */
+.review-name {
+
+    font-weight: 700;
+
+    font-size: 14px;
+}
+/* Review stars */
+.review-stars {
+
+    color: var(--color-accent);
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+/* Review text */
+.review-comment {
+
+    font-size: 14px;
+
+    color: var(--color-text-muted);
+}

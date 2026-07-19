@@ -1,0 +1,77 @@
+/*
+    This file fits the site to small screens (responsive design).
+
+    Here we set what changes on tablet and phone: fewer columns in the
+    products grid, the header moves to two rows, the cart changes from
+    two columns to one, and big texts get smaller.
+    It must load last (see main.css) so it can override the normal
+    rules when the screen is narrow.
+*/
+
+/* Tablet */
+@media (max-width:900px){
+    .product-detail{
+        grid-template-columns:1fr;
+        gap:24px;
+    }
+    .cart-layout{
+        grid-template-columns:1fr;
+    }
+    .order-summary{
+        position:static;
+    }
+}
+
+/* Mobile */
+@media (max-width:720px){
+    .site-header .container{
+        gap:12px;
+    }
+    .main-nav{
+        order:3;
+        width:100%;
+        justify-content:flex-start;
+        gap:16px;
+    }
+    .search-form{
+        order:2;
+        min-width:140px;
+    }
+    .hero{
+        border-radius:32px;
+    }
+    .hero-copy{
+        width:100%;
+        background:rgba(255,255,255,.55);
+    }
+    .hero-overlay{
+        background:rgba(255,255,255,.45);
+    }
+    .promo-slide{
+        grid-template-columns:1fr;
+    }
+    .promo-visual{
+        height:200px;
+    }
+    .form-grid-2{
+        grid-template-columns:1fr;
+    }
+}
+
+/* Small mobile */
+@media (max-width:480px){
+    main{
+        padding:20px 14px 56px;
+    }
+    .product-grid{
+        grid-template-columns:repeat(auto-fill,minmax(120px,1fr));
+        gap:10px;
+    }
+    .trust-badges{
+        grid-template-columns:1fr 1fr;
+    }
+    .auth-card{
+        padding:26px 20px;
+        margin:24px auto;
+    }
+}

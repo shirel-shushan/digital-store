@@ -1,0 +1,153 @@
+/*
+    This file is in charge of the general page skeleton (Layout).
+
+    Here we define the main container, the central content area (main),
+    the section titles that repeat on every page, the state messages
+    (loading / empty) and the breadcrumbs on the cart page.
+*/
+
+
+/* ---------- Direction ---------- */
+
+html {
+
+    direction: rtl;
+}
+
+
+/* ---------- Page Container ---------- */
+
+.container {
+
+    width: 100%;
+
+    max-width: var(--container-max);
+
+    margin: 0 auto;
+
+    padding: 0 20px;
+}
+
+
+/* ---------- Main Content Area ---------- */
+
+body {
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 100vh;
+}
+
+main {
+
+    flex: 1;
+
+    width: 100%;
+
+    max-width: var(--container-max);
+
+    margin: 0 auto;
+
+    padding: 28px 20px 72px;
+}
+
+/* Small fade-in when navigating between pages */
+#page-content {
+
+    animation: pageIn .35s ease both;
+}
+
+
+/* ---------- Sections ---------- */
+
+.section {
+
+    margin-bottom: var(--space-xl);
+}
+
+.section-head {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 14px;
+
+    margin-bottom: var(--space-md);
+}
+
+.section-title {
+
+    font-family: var(--font-heading);
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    min-width: 0;
+}
+
+.section-link {
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    color: var(--color-accent);
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    flex-shrink: 0;
+
+    border: none;
+
+    background: none;
+}
+
+
+/* ---------- State Messages (loading / empty) ---------- */
+
+.state-message {
+
+    color: var(--color-text-light);
+
+    font-size: 15px;
+
+    padding: 40px 0;
+
+    text-align: center;
+}
+
+.state-message a,
+.state-message .link {
+
+    color: var(--color-accent);
+
+    cursor: pointer;
+
+    font-weight: 600;
+}
+
+
+/* ---------- Breadcrumb (cart page) ---------- */
+
+.breadcrumb {
+
+    font-size: 12.5px;
+
+    color: var(--color-text-light);
+
+    margin-bottom: var(--space-md);
+}

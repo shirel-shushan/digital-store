@@ -1,0 +1,233 @@
+/*
+    This file resets the browser's default styling.
+
+    It also sets basic things like the font,
+    the site colors, general animations and one
+    clean look for all the elements in the project.
+*/
+
+
+/* ---------- Global Reset ---------- */
+
+/* Include padding and border inside the element size */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Remove the default margin and padding */
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ---------- Body ---------- */
+
+body {
+
+    /* Main font of the website */
+    font-family: var(--font-body);
+
+    /* Website background color */
+    background: var(--color-bg);
+
+    /* Main text color */
+    color: var(--color-text);
+
+    min-height: 100vh;
+
+    /* Default spacing between text lines */
+    line-height: 1.5;
+
+    /* Makes the text look smoother */
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* ---------- Images ---------- */
+
+img {
+
+    /* Prevent images from overflowing */
+    max-width: 100%;
+
+    display: block;
+}
+
+
+/* ---------- Links ---------- */
+
+a {
+
+    /* Use the parent's color */
+    color: inherit;
+
+    /* Remove underline */
+    text-decoration: none;
+}
+
+
+/* ---------- Form Elements ---------- */
+
+button,
+input {
+
+    /* Use the same font as the page */
+    font-family: inherit;
+
+    font-size: inherit;
+
+    color: inherit;
+}
+
+button {
+
+    /* Show pointer on hover */
+    cursor: pointer;
+}
+
+input::placeholder {
+
+    /* Placeholder text color */
+    color: var(--color-text-lighter);
+}
+
+
+/* ---------- Lists ---------- */
+
+ul,
+ol {
+
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+/* ---------- Text ---------- */
+
+h1,
+h2,
+h3,
+h4,
+p {
+
+    margin: 0;
+}
+
+
+/* ---------- Text Selection ---------- */
+
+::selection {
+
+    background: var(--color-text);
+
+    color: #fff;
+}
+
+
+/* ---------- Animations ---------- */
+
+/* Fade element from bottom */
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(16px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* Simple fade animation */
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* Hero image animation */
+@keyframes heroPopIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(1.12);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+}
+
+
+/* Page transition */
+@keyframes pageIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(10px) scale(.99);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0) scale(1);
+
+    }
+
+}
+
+
+/* Footer brands scrolling animation */
+@keyframes brandScroll {
+
+    from {
+
+        transform: translateX(0);
+
+    }
+
+    to {
+
+        transform: translateX(-50%);
+
+    }
+
+}

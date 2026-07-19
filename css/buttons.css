@@ -1,0 +1,82 @@
+
+/*
+    This file styles all the buttons on the site.
+
+    There are three main kinds:
+    - btn-dark: a full dark button (for example "Sign in")
+    - btn-accent: an orange button ("Go to payment")
+    - btn-outline: a white button with a border ("Logout")
+    Plus the round icon buttons and the green "Added to cart" state.
+*/
+
+/* Base button */
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:12px 20px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    text-decoration:none;
+    transition:.2s;
+}
+
+/* Primary button */
+.btn-primary{
+    background:var(--color-accent);
+    color:#fff;
+}
+
+/* Primary hover */
+.btn-primary:hover{
+    opacity:.9;
+}
+
+/* Secondary button */
+.btn-secondary{
+    background:var(--color-bg-alt);
+    color:var(--color-text);
+}
+
+/* Secondary hover */
+.btn-secondary:hover{
+    background:var(--color-border-alt);
+}
+
+/* Dark button */
+.btn-dark{
+    background:var(--color-text);
+    color:#fff;
+}
+
+/* Dark hover */
+.btn-dark:hover{
+    opacity:.9;
+}
+
+/* Outline button */
+.btn-outline{
+    background:transparent;
+    border:1px solid var(--color-border-alt);
+    color:var(--color-text);
+}
+
+/* Outline hover */
+.btn-outline:hover{
+    background:var(--color-bg-alt);
+}
+
+/* Full width */
+.btn-block{
+    width:100%;
+}
+
+/* Disabled */
+.btn:disabled{
+    opacity:.5;
+    cursor:not-allowed;
+}

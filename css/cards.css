@@ -1,0 +1,163 @@
+/*
+    This file styles the product cards — the white boxes that appear
+    on the home page, the products page and the favorites page.
+
+    Visually, every card holds: a product image on a light background
+    with a round heart button in the corner, the product name, the brand
+    name, a star rating, the price (with the old price crossed out if
+    there is a discount) and an "Add to cart" button.
+    On mouse hover the card jumps a little up and gets a stronger shadow.
+*/
+
+/* Grid that holds the product cards */
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
+    gap:14px;
+}
+
+/* Wider cards on the products/search results page */
+.product-grid.wide{
+    grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+    gap:18px;
+}
+
+/* One product card */
+.product-card{
+    cursor:pointer;
+    position:relative;
+    background:var(--color-surface);
+    border:1px solid var(--color-border-alt);
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-sm);
+    overflow:hidden;
+    transition:transform .2s, box-shadow .2s;
+    animation:fadeUp .5s ease both;
+    text-align:right;
+    display:block;
+    padding:0;
+}
+
+.product-card:hover{
+    transform:translateY(-4px);
+    box-shadow:var(--shadow-md);
+}
+
+/* Image area */
+.product-card-media{
+    position:relative;
+    width:100%;
+    aspect-ratio:1;
+    background:var(--color-bg);
+    overflow:hidden;
+    padding:10px;
+}
+
+.product-grid.wide .product-card-media{
+    padding:14px;
+}
+
+.product-card-media img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+/* Favorite heart button, top-left of the image */
+.fav-toggle{
+    position:absolute;
+    top:12px;
+    left:12px;
+    cursor:pointer;
+    border:none;
+    background:none;
+    padding:0;
+}
+
+/* Text area */
+.product-card-body{
+    padding:10px 12px;
+}
+
+.product-grid.wide .product-card-body{
+    padding:12px 14px;
+}
+
+.product-card-title{
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:2px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.product-grid.wide .product-card-title{
+    font-size:14px;
+}
+
+.product-card-subtitle{
+    font-size:11px;
+    color:var(--color-text-light);
+    margin-bottom:5px;
+}
+
+.product-card-rating{
+    font-size:11px;
+    color:var(--color-accent);
+    margin-bottom:7px;
+}
+
+.product-card-price-row{
+    display:flex;
+    align-items:baseline;
+    gap:6px;
+    margin-bottom:8px;
+}
+
+.price-original{
+    font-size:11px;
+    color:var(--color-text-lighter);
+    text-decoration:line-through;
+}
+
+.price-current{
+    font-size:14.5px;
+    font-weight:800;
+    color:var(--color-accent);
+}
+
+.product-grid.wide .price-current{
+    font-size:16px;
+}
+
+/* Add to cart button */
+.add-to-cart-btn{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+    padding:7px;
+    border:1px solid var(--color-border);
+    border-radius:7px;
+    font-size:11.5px;
+    font-weight:700;
+    cursor:pointer;
+    background:var(--color-bg);
+    color:var(--color-text);
+    transition:background .2s, transform .2s, color .2s, border-color .2s;
+}
+
+.product-grid.wide .add-to-cart-btn{
+    padding:9px;
+    font-size:13px;
+}
+
+/* "Added to cart" flash state, set briefly by ui.js */
+.add-to-cart-btn.added{
+    background:var(--color-success);
+    color:#fff;
+    border-color:var(--color-success);
+    transform:scale(1.04);
+}

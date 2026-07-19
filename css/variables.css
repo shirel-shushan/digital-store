@@ -1,0 +1,129 @@
+/*
+    This file holds all the design variables of the site.
+
+    Here we define the colors, fonts, sizes, spacing,
+    corner radiuses and shadows that are used
+    in all the CSS files of the project.
+*/
+
+:root {
+
+  /* ---------- Colors ---------- */
+
+  /* Main background color */
+  --color-bg: #faf7f2;
+
+  /* Secondary background */
+  --color-bg-alt: #f2ede4;
+
+  /* Card and section background */
+  --color-surface: #ffffff;
+
+  /* Main text color */
+  --color-text: #1c1a17;
+
+  /* Dark gray text */
+  --color-text-muted: #4a453e;
+
+  /* Light gray text */
+  --color-text-light: #8b8579;
+
+  /* Very light text */
+  --color-text-lighter: #a49d92;
+
+  /* Main border color */
+  --color-border: #e8e2d9;
+
+  /* Secondary border */
+  --color-border-alt: #eee7dc;
+
+  /* Main accent color */
+  --color-accent: #c1440e;
+
+  /* Dark accent color */
+  --color-accent-dark: #9c360b;
+
+  /* Success messages */
+  --color-success: #2f6d4f;
+
+  /* Error messages */
+  --color-error: #b3261e;
+
+  /* Error background */
+  --color-error-bg: #fbeceb;
+
+  /* Footer background */
+  --color-dark: #1c1a17;
+
+  /* Footer text */
+  --color-dark-text: #cfc9c0;
+
+  /* Footer border */
+  --color-dark-border: #3a332b;
+
+
+
+  /* ---------- Fonts ---------- */
+
+  /* Main font used in the website */
+--font-body: 'Heebo', Arial, sans-serif;
+--font-heading: 'Secular One', Arial, sans-serif;  /* ---------- Layout ---------- */
+
+  /* Maximum width of the content */
+  --container-max: 1280px;
+
+  /* Header height */
+  --header-height: 74px;
+
+
+
+  /* ---------- Border Radius ---------- */
+
+  /* Small rounded corners */
+  --radius-sm: 8px;
+
+  /* Medium rounded corners */
+  --radius-md: 12px;
+
+  /* Large rounded corners */
+  --radius-lg: 16px;
+
+  /* Extra large rounded corners */
+  --radius-xl: 20px;
+
+  /* Makes a perfect circle */
+  --radius-round: 50%;
+
+
+
+  /* ---------- Shadows ---------- */
+
+  /* Small shadow */
+  --shadow-sm: 0 6px 16px -10px rgba(28, 26, 23, 0.18);
+
+  /* Medium shadow */
+  --shadow-md: 0 14px 28px -16px rgba(28, 26, 23, 0.35);
+
+  /* Large shadow */
+  --shadow-lg: 0 20px 44px -24px rgba(28, 26, 23, 0.25);
+
+
+
+  /* ---------- Spacing ---------- */
+
+  /* Small spacing */
+  --space-xs: 6px;
+
+  /* Regular spacing */
+  --space-sm: 10px;
+
+  /* Medium spacing */
+  --space-md: 16px;
+
+  /* Large spacing */
+  --space-lg: 24px;
+
+  /* Space between sections */
+  --space-xl: 40px;
+
+}

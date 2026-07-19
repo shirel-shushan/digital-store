@@ -1,0 +1,23 @@
+/*
+    main.css — the main style file (the only one the pages link to).
+
+    It does not style anything by itself — it only loads the fonts from
+    Google and imports all the other CSS files.
+    The import order matters: first the base (variables, reset), then the
+    page layout, then the components (header, cards, forms...), and last
+    responsive.css which is for small screens and must come last so it
+    can override the earlier rules.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&family=Frank+Ruhl+Libre:wght@500;600;700;800&display=swap');@import 'variables.css';
+@import 'reset.css';
+@import 'layout.css';
+@import 'header.css';
+@import 'footer.css';
+@import 'hero.css';
+@import 'categories.css';
+@import 'cards.css';
+@import 'buttons.css';
+@import 'forms.css';
+@import 'cart.css';
+@import 'product.css';
+@import 'responsive.css';

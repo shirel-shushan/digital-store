@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<!--
+  products.html — a products list page.
+  What you see: a big title (the category name or "Search results for...")
+  and under it a grid of product cards.
+  What is shown is decided by the address: ?category=... or ?q=... (search),
+  and the grid is built by js/products.js into the empty div.
+-->
+
+  <!-- Head: settings you do not see on the screen — Hebrew encoding, the
+       browser tab title, the small tab icon (favicon) and the link to the main CSS file -->
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>מוצרים — מרקט פלוס</title>
+  <link rel="icon" href="assets/logos/logo-icon.png">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body data-page="products">
+
+  <!-- The header (the sticky white top bar with the logo, menu, search and icons).
+       This div is empty on purpose — js/header.js fills it when the page loads -->
+  <div id="site-header"></div>
+
+  <!-- Main: the central content area of the page -->
+  <main>
+    <div id="page-content">
+
+      <!-- The title (js/products.js updates its text)
+           and the empty root where the product cards grid is built -->
+      <h1 class="section-title" id="products-title" style="font-size:26px;margin-bottom:20px;">מוצרים</h1>
+      <div id="products-grid-root"></div>
+    </div>
+  </main>
+
+  <!-- The footer (the dark bar at the bottom with the brands strip and contact info).
+       Also empty — js/ui.js builds it through header.js -->
+  <div id="site-footer"></div>
+
+  <!-- Loading the JavaScript files. The order matters: first the base files
+       (api, storage, utils, ui, router) and only then the files that use them -->
+  <script src="js/api.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/favorites.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/products.js"></script>
+</body>
+</html>

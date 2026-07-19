@@ -1,0 +1,73 @@
+/*
+    This file styles the footer — the dark bar at the bottom of every page.
+
+    What you see in it: a brands strip (Apple, SAMSUNG...) that scrolls
+    by itself from side to side, a light logo, "Contact" and "Help"
+    columns, and a copyright line at the bottom.
+*/
+
+/* The footer itself — dark background, light text, sticks to the bottom of the page */
+.site-footer{
+    background:var(--color-dark);
+    color:var(--color-dark-text);
+    margin-top:auto;
+}
+
+/* The scrolling brands strip — the mask fades the edges so the names enter and leave softly */
+.brand-strip{
+    overflow:hidden;
+    border-bottom:1px solid rgba(255,255,255,.1);
+    padding:26px 0;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+}
+
+/* The "track" of the brands strip — the part that really moves, with an endless animation */
+.brand-strip-track{
+    display:flex;
+    align-items:center;
+    gap:56px;
+    width:max-content;
+    animation:brandScroll 22s linear infinite;
+}
+
+.brand-strip-track span{
+    font-size:20px;
+    font-weight:700;
+    color:var(--color-text-light);
+    letter-spacing:.5px;
+    white-space:nowrap;
+}
+
+/* Footer columns (contact / help) */
+.footer-cols{
+    max-width:var(--container-max);
+    margin:0 auto;
+    padding:36px 20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:var(--space-lg);
+}
+
+/* Column title */
+.footer-col-title{
+    font-size:14px;
+    font-weight:700;
+    color:#fff;
+    margin-bottom:10px;
+}
+
+/* Column text */
+.footer-col p{
+    font-size:13px;
+    line-height:1.9;
+}
+
+/* Copyright bar */
+.footer-bottom{
+    border-top:1px solid var(--color-dark-border);
+    text-align:center;
+    font-size:12px;
+    padding:14px;
+    color:var(--color-text-light);
+}

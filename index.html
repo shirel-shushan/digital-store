@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<!--
+  index.html — the home page of the "Market Plus" store.
+  What you see when you enter the site, from top to bottom:
+  1. A sticky white header (logo, menu, search, cart / favorites / user icons)
+  2. A big opening (Hero) image with a title and a button
+  3. A row of 4 "trust badges" (fast shipping, secure payment, etc.)
+  4. A rotating promo banner (carousel)
+  5. A row of top-category circles
+  6. Product sections by category
+  7. A dark footer
+  Most of the content is built by JavaScript into empty divs marked in the comments below.
+-->
+
+  <!-- Head: settings you do not see on the screen — Hebrew encoding, the
+       browser tab title, the small tab icon (favicon) and the link to the main CSS file -->
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>מרקט פלוס — חנות דיגיטלית</title>
+  <link rel="icon" href="assets/logos/logo-icon.png">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body data-page="home">
+
+  <!-- The header (the sticky white top bar with the logo, menu, search and icons).
+       This div is empty on purpose — js/header.js fills it when the page loads -->
+  <div id="site-header"></div>
+
+  <!-- Main: the central content area of the page (everything between the header and the footer) -->
+  <main>
+    <div id="page-content">
+
+      <!-- The opening (Hero) area: the big image at the top with rounded corners,
+           a dark layer over the image, and on top of it text — "2026 collection",
+           a main title, a sub line and a dark "See the collection" button -->
+      <section class="hero">
+        <img src="assets/banners/hero-collage.png" alt="מוצרים נבחרים">
+        <div class="hero-overlay"></div>
+        <div class="hero-copy">
+          <div class="hero-eyebrow">קולקציית 2026</div>
+          <h1 class="hero-title">עיצוב, טכנולוגיה וסטייל במקום אחד</h1>
+          <p class="hero-sub">גלו את המוצרים הנבחרים של העונה — מגאדג'טים ועד אביזרי אופנה.</p>
+          <button class="btn btn-dark" data-action="go-home">לצפייה בקולקציה</button>
+        </div>
+      </section>
+
+      <!-- The trust badges row: 4 white boxes, each with an orange icon in a
+           circle + a small title + one line of text (shipping, secure payment,
+           returns, customer service) -->
+      <div class="trust-badges">
+        <div class="trust-badge">
+          <div class="trust-badge-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#c1440e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"></path><circle cx="7" cy="18" r="1.6"></circle><circle cx="17.5" cy="18" r="1.6"></circle></svg></div>
+          <div><div class="trust-badge-title">משלוח מהיר</div><div class="trust-badge-sub">עד 3 ימי עסקים</div></div>
+        </div>
+        <div class="trust-badge">
+          <div class="trust-badge-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#c1440e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></div>
+          <div><div class="trust-badge-title">תשלום מאובטח</div><div class="trust-badge-sub">כל אמצעי התשלום</div></div>
+        </div>
+        <div class="trust-badge">
+          <div class="trust-badge-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#c1440e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></div>
+          <div><div class="trust-badge-title">קנייה בטוחה</div><div class="trust-badge-sub">מדיניות החזרה מפורטת</div></div>
+        </div>
+        <div class="trust-badge">
+          <div class="trust-badge-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#c1440e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"></path><path d="M4 13v3a2 2 0 0 0 2 2h1v-6H5a1 1 0 0 0-1 1zM20 13v3a2 2 0 0 1-2 2h-1v-6h1a1 1 0 0 1 2 1z"></path></svg></div>
+          <div><div class="trust-badge-title">שירות לקוחות</div><div class="trust-badge-sub">זמינים עבורכם 24/7</div></div>
+        </div>
+      </div>
+
+      <!-- The rotating promo banner (carousel): a big colorful card with the top
+           product, price, buy button, arrows and dots.
+           Empty here — js/home.js fills it and changes it every few seconds -->
+      <div id="promo-root"></div>
+
+      <!-- Top categories: a title + a row of circles with an image and a category
+           name. The row itself (top-categories-root) is filled by js/home.js -->
+      <div class="section">
+        <div class="section-head">
+          <div class="section-title">קטגוריות מובילות</div>
+        </div>
+        <div class="top-categories" id="top-categories-root"></div>
+      </div>
+
+      <!-- The product sections of the home page: for every chosen category — a title,
+           a "See all" link and a grid of 4 product cards. Built by js/home.js -->
+      <div id="home-sections-root"></div>
+    </div>
+  </main>
+
+  <!-- The footer (the dark bar at the bottom with the brands strip and contact info).
+       Also empty — js/ui.js builds it through header.js -->
+  <div id="site-footer"></div>
+
+  <!-- Loading the JavaScript files. The order matters: first the base files
+       (api, storage, utils, ui, router) and only then the files that use them -->
+  <script src="js/api.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/favorites.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+/*
+    This file styles the cart page in all its states.
+
+    Visually: the product rows in the cart (small image, name, quantity
+    picker + / −, price and a trash can button), the white "Order summary"
+    box that stays stuck while scrolling, the payment form, and the
+    confirmation screen with the big green check.
+*/
+/* =====================================================
+   Cart Header — the top of the cart page ("Keep shopping" button and page name)
+===================================================== */
+.cart-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: var(--space-lg); flex-wrap: wrap; gap: 10px;
+}
+.cart-title { font-family: var(--font-heading); font-size: 24px; font-weight: 700; }
+.cart-continue { cursor: pointer; font-size: 14px; color: var(--color-text-muted); font-weight: 600; border: none; background: none; }
+.cart-icon-badge {
+  width: 44px; height: 44px; border-radius: var(--radius-round);
+  background: var(--color-bg-alt); display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+
+/* =====================================================
+   Cart Items — the product rows: image, name, quantity picker, price and delete button
+===================================================== */
+.cart-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+  align-items: start;
+}
+.cart-lines { display: flex; flex-direction: column; gap: 14px; }
+.cart-line {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 14px;
+  background: var(--color-surface); border: 1px solid var(--color-border-alt);
+  border-radius: 14px; padding: 16px;
+}
+.cart-line-info { display: flex; align-items: center; gap: 14px; flex: 1; min-width: 220px; }
+.cart-line-thumb {
+  width: 64px; height: 64px; flex-shrink: 0; border-radius: 10px; overflow: hidden;
+  background: var(--color-bg); padding: 8px;
+}
+.cart-line-title { font-weight: 700; font-size: 15px; margin-bottom: 3px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cart-line-unit { font-size: 13px; color: var(--color-text-light); }
+.cart-line-actions { display: flex; align-items: center; gap: 14px; flex-shrink: 0; margin-inline-start: auto; }
+.cart-line-qty button { width: 32px; height: 32px; font-size: 16px; }
+.cart-line-qty .qty-value { width: 32px; font-size: 14px; }
+.cart-line-total { width: 80px; flex-shrink: 0; font-weight: 700; font-size: 15px; color: var(--color-accent); text-align: left; }
+.cart-line-remove { border: none; background: none; color: var(--color-text-lighter); cursor: pointer; padding: 4px; flex-shrink: 0; }
+.cart-line-remove:hover { color: var(--color-error); }
+
+.cart-perks {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px;
+  background: var(--color-surface); border: 1px solid var(--color-border-alt);
+  border-radius: 14px; padding: 16px; margin-top: 6px;
+}
+.cart-perk { display: flex; align-items: center; gap: 10px; }
+.cart-perk span { font-size: 12.5px; color: var(--color-text-muted); }
+
+/* =====================================================
+   Order Summary — the white summary box on the side, stays stuck while scrolling
+===================================================== */
+.order-summary {
+  background: var(--color-surface); border: 1px solid var(--color-border-alt);
+  border-radius: 14px; padding: 22px; position: sticky; top: 90px;
+}
+.order-summary-title { font-family: var(--font-heading); font-size: 18px; font-weight: 700; margin-bottom: 16px; }
+.order-summary-row { display: flex; justify-content: space-between; font-size: 14px; color: var(--color-text-muted); margin-bottom: 10px; }
+.order-summary-row.free { color: var(--color-success); font-weight: 600; }
+.order-summary-total {
+  border-top: 1px solid var(--color-border-alt); padding-top: 14px;
+  display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 18px;
+}
+.order-summary-total span:last-child { font-size: 22px; font-weight: 800; color: var(--color-accent); }
+.coupon-input { width: 100%; margin-top: 10px; padding: 10px 12px; border: 1px solid var(--color-border); border-radius: 8px; font-size: 13px; }
+.summary-note { text-align: center; font-size: 12px; color: var(--color-text-lighter); margin-top: 16px; }
+
+/* =====================================================
+   Checkout Form — the shipping and payment form at checkout
+===================================================== */
+.checkout-form { max-width: 520px; margin: 0 auto; }
+.checkout-total-row { display: flex; justify-content: space-between; font-size: 16px; font-weight: 700; padding-top: 8px; }
+
+/* =====================================================
+   Order Confirmation — the screen with the green check "Order received!"
+===================================================== */
+.confirm-box { max-width: 480px; margin: 60px auto; text-align: center; }
+.confirm-check { font-size: 48px; margin-bottom: 12px; }
+.confirm-title { font-family: var(--font-heading); font-size: 24px; font-weight: 700; margin-bottom: 10px; }
+.confirm-sub { color: var(--color-text-muted); font-size: 15px; margin-bottom: 22px; }
+.confirm-hint { color: var(--color-text-light); font-size: 13px; margin-bottom: 16px; }

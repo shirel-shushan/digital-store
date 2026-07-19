@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<!--
+  profile.html — the personal area of the logged-in user.
+  What you see: a card with the user details (name, email, address) and a
+  "Logout" button, and under it the order history — a card for every order.
+  Someone not logged in is sent automatically to the login page (js/profile.js).
+-->
+
+  <!-- Head: settings you do not see on the screen — Hebrew encoding, the
+       browser tab title, the small tab icon (favicon) and the link to the main CSS file -->
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>האזור האישי שלי — מרקט פלוס</title>
+  <link rel="icon" href="assets/logos/logo-icon.png">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body data-page="profile">
+
+  <!-- The header (the sticky white top bar with the logo, menu, search and icons).
+       This div is empty on purpose — js/header.js fills it when the page loads -->
+  <div id="site-header"></div>
+
+  <!-- Main: the content area, narrower than usual (640px) so it looks like a centered personal form -->
+  <main>
+    <div id="page-content" style="max-width:640px;margin:0 auto;">
+
+      <!-- The empty root where js/profile.js draws the details and the orders -->
+      <div id="profile-page-root"></div>
+    </div>
+  </main>
+
+  <!-- The footer (the dark bar at the bottom with the brands strip and contact info).
+       Also empty — js/ui.js builds it through header.js -->
+  <div id="site-footer"></div>
+
+  <!-- Loading the JavaScript files. The order matters: first the base files
+       (api, storage, utils, ui, router) and only then the files that use them -->
+  <script src="js/api.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/favorites.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>

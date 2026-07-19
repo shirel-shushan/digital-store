@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<!--
+  cart.html — the shopping cart page.
+  What you see: breadcrumbs at the top, then — if there are products in the
+  cart — two columns: on the right the product rows (image, name, quantity
+  with + / −, price, delete button) and on the left an "Order summary" box
+  with a "Go to payment" button.
+  From this page you also move to the payment form and the order
+  confirmation screen.
+  All the content is built by js/cart.js into the empty div below.
+-->
+
+  <!-- Head: settings you do not see on the screen — Hebrew encoding, the
+       browser tab title, the small tab icon (favicon) and the link to the main CSS file -->
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>סל הקניות — מרקט פלוס</title>
+  <link rel="icon" href="assets/logos/logo-icon.png">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body data-page="cart">
+
+  <!-- The header (the sticky white top bar with the logo, menu, search and icons).
+       This div is empty on purpose — js/header.js fills it when the page loads -->
+  <div id="site-header"></div>
+
+  <!-- Main: the central content area of the page -->
+  <main>
+    <div id="page-content">
+
+      <!-- Breadcrumbs (where am I on the site) + the empty root where js/cart.js
+           draws the cart / the payment form / the order confirmation -->
+      <div class="breadcrumb">דף הבית ← סל הקניות</div>
+      <div id="cart-page-root"></div>
+    </div>
+  </main>
+
+  <!-- The footer (the dark bar at the bottom with the brands strip and contact info).
+       Also empty — js/ui.js builds it through header.js -->
+  <div id="site-footer"></div>
+
+  <!-- Loading the JavaScript files. The order matters: first the base files
+       (api, storage, utils, ui, router) and only then the files that use them -->
+  <script src="js/api.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/favorites.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/header.js"></script>
+</body>
+</html>
