@@ -14,6 +14,8 @@
   let mode = utils.getQueryParam('mode') === 'signup' ? 'signup' : 'login';
   let showPassword = false;
   let error = '';
+  let loginEmail = '';
+  let loginPassword = '';
 
   // Draws the login form: email, password with a show / hide button,
   // a red error message if there is one, a "Sign in" button, a signup link,
@@ -27,12 +29,12 @@
         <div class="field-group">
           <div class="field">
             <div class="field-label">אימייל</div>
-            <div class="field-with-icon">${ui.icons.search()}<input class="field-input" id="login-email" placeholder="you@example.com"></div>
+            <div class="field-with-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="#a49d92" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"></path><path d="m4 6 8 7 8-7"></path></svg><input class="field-input" id="login-email" placeholder="you@example.com" value="${utils.escapeHtml(loginEmail)}"></div>
           </div>
           <div class="field">
             <div class="field-label">סיסמה</div>
             <div class="field-with-icon field-with-toggle">
-              <input class="field-input" id="login-password" type="${showPassword ? 'text' : 'password'}" placeholder="••••••••">
+              <input class="field-input" id="login-password" type="${showPassword ? 'text' : 'password'}" placeholder="••••••••" value="${utils.escapeHtml(loginPassword)}">
               <button class="field-toggle-btn" data-action="toggle-password" type="button">${showPassword ? 'הסתר' : 'הצג'}</button>
             </div>
           </div>
@@ -80,11 +82,19 @@
 
     if (el.dataset.action === 'go-signup') { mode = 'signup'; render(); return; }
     if (el.dataset.action === 'go-login') { mode = 'login'; render(); return; }
-    if (el.dataset.action === 'toggle-password') { showPassword = !showPassword; renderLogin(); return; }
+    if (el.dataset.action === 'toggle-password') {
+      loginEmail = document.getElementById('login-email').value;
+      loginPassword = document.getElementById('login-password').value;
+      showPassword = !showPassword;
+      renderLogin();
+      return;
+    }
 
     if (el.dataset.action === 'submit-login') {
-      const email = document.getElementById('login-email').value.trim();
-      const password = document.getElementById('login-password').value;
+      loginEmail = document.getElementById('login-email').value.trim();
+      loginPassword = document.getElementById('login-password').value;
+      const email = loginEmail;
+      const password = loginPassword;
       const users = await api.getUsers();
       const user = users.find((u) => u.email === email && u.password === password);
       if (!user) { error = 'אימייל או סיסמה שגויים'; renderLogin(); return; }
