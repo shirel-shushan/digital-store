@@ -21,6 +21,11 @@ body {
     padding: 0;
 }
 
+/* Smooth scroll for in-page anchor links, like the hero's "view collection" button */
+html {
+    scroll-behavior: smooth;
+}
+
 
 /* ---------- Body ---------- */
 
