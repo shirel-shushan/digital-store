@@ -7,292 +7,51 @@
     It must load last (see main.css) so it can override the normal
     rules when the screen is narrow.
 */
-/* Mobile */
-@media (max-width:720px){
-    .site-header{
-        position:relative;
-    }
-
-    .site-header .container{
-        display:grid;
-        grid-template-columns:auto 1fr;
-        align-items:center;
-        gap:12px;
-        padding:10px 14px 12px;
-    }
-
-    .brand{
-        grid-column:2;
-        grid-row:1;
-        justify-self:end;
-    }
-
-    .brand svg{
-        width:52px;
-        height:auto;
-    }
-
-    .header-actions{
-        grid-column:1;
-        grid-row:1;
-        justify-self:start;
-        gap:10px;
-    }
-
-    .icon-btn{
-        padding:4px;
-    }
-
-    #user-name-label{
-        display:none;
-    }
-
-    .search-form{
-        grid-column:1 / -1;
-        grid-row:2;
-        width:100%;
-        min-width:0;
-        order:initial;
-    }
-
-    .search-input{
-        height:44px;
-        font-size:15px;
-        border-radius:24px;
-    }
-
-    .main-nav{
-        grid-column:1 / -1;
-        grid-row:3;
-        width:100%;
-        order:initial;
-        justify-content:space-around;
-        gap:6px;
-        padding-top:2px;
-    }
-
-    .nav-link,
-    .nav-tab,
-    .category-trigger{
-        font-size:14px;
-        padding:7px 4px;
-    }
-
-    .category-menu{
-        position:fixed;
-        top:auto;
-        right:14px;
-        left:14px;
-        min-width:0;
-        grid-template-columns:1fr 1fr;
-        max-height:60vh;
-        overflow-y:auto;
-    }
-
-    main{
-        padding:18px 14px 56px;
-    }
-
-    .hero{
-        height:auto;
-        min-height:410px;
-        border-radius:28px;
-        margin-bottom:24px;
-    }
-
-    .hero img{
-        object-position:left center;
-    }
-
-    .hero-overlay{
-        background:linear-gradient(
-            to bottom,
-            rgba(255,255,255,.40),
-            rgba(255,255,255,.84) 58%,
-            rgba(255,255,255,.96)
-        );
-    }
-
-    .hero-copy{
-        position:relative;
-        width:100%;
-        min-height:410px;
-        padding:170px 24px 28px;
-        justify-content:flex-end;
-        align-items:stretch;
-        text-align:right;
-        background:none;
-        gap:10px;
-    }
-
-    .hero-eyebrow{
-        font-size:12px;
-        letter-spacing:1.5px;
-    }
-
-    .hero-title{
-        font-size:27px;
-        line-height:1.2;
-    }
-
-    .hero-sub{
-        font-size:15px;
-        line-height:1.6;
-    }
-
-    .hero-copy .btn{
-        width:100%;
-        min-height:48px;
-        font-size:16px;
-    }
-
-    .trust-badges{
-        grid-template-columns:1fr 1fr;
-        gap:16px 10px;
-        padding:16px 12px;
-    }
-
-    .trust-badge{
-        flex-direction:column;
-        text-align:center;
-        gap:7px;
-    }
-
-    .trust-badge-icon{
-        width:48px;
-        height:48px;
-    }
-
-    .trust-badge-title{
-        font-size:14px;
-    }
-
-    .trust-badge-sub{
-        font-size:12px;
-    }
-
-    .promo-slide{
-        grid-template-columns:1fr;
-    }
-
-    .promo-visual{
-        height:200px;
-    }
-
-    .form-grid-2{
-        grid-template-columns:1fr;
-    }
+/* responsive.css — small-screen adjustments (must load last) */
+@media (max-width: 900px) {
+  .product-detail { grid-template-columns: 1fr; gap: 24px; }
+  .cart-layout { grid-template-columns: 1fr; }
+  .order-summary { position: static; }
 }
 
-/* Mobile */
-@media (max-width:720px){
-    .site-header .container{
-        gap:12px;
-    }
-    .main-nav{
-        order:3;
-        width:100%;
-        justify-content:flex-start;
-        gap:16px;
-    }
-    .search-form{
-        order:2;
-        min-width:140px;
-    }
-  .hero{
-        border-radius:24px;
-        height:auto;
-        display:flex;
-        flex-direction:column;
-    }
-    .hero img{
-        position:static;
-        height:200px;
-        object-fit:cover;
-        border-radius:24px 24px 0 0;
-    }
-    .hero-overlay{
-        display:none;
-    }
-    .hero-copy{
-        position:static;
-        width:100%;
-        background:var(--color-surface);
-        padding:20px;
-    }
-    .promo-slide{
-        grid-template-columns:1fr;
-    }
-    .promo-visual{
-        height:200px;
-    }
-    .form-grid-2{
-        grid-template-columns:1fr;
-    }
+@media (max-width: 720px) {
+  .site-header .container { gap: 12px; }
+  .main-nav { order: 3; width: 100%; justify-content: flex-start; gap: 16px; }
+  .search-form { order: 2; min-width: 140px; }
+  .hero { border-radius: 32px; }
+  .hero-copy { width: 100%; background: rgba(255,255,255,.55); }
+  .hero-overlay { background: rgba(255,255,255,.45); }
+  .promo-slide { grid-template-columns: 1fr; }
+  .promo-visual { height: 200px; }
+  .form-grid-2 { grid-template-columns: 1fr; }
 }
 
-/* Small mobile */
-@media (max-width:480px){
-    .site-header .container{
-        padding:9px 12px 11px;
-    }
+@media (max-width: 480px) {
+  main { padding: 20px 14px 56px; }
+  .product-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
+  .trust-badges {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    padding: 10px 4px;
+  }
+  .trust-badge {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+  }
+  .trust-badge-icon { width: 32px; height: 32px; }
+  .trust-badge-icon svg { width: 18px; height: 18px; }
+  .trust-badge-sub { display: none; }
+  .trust-badge-title { font-size: 9.5px; line-height: 1.2; }
+  .auth-card { padding: 26px 20px; margin: 24px auto; }
 
-    .brand svg{
-        width:46px;
-    }
-
-    .header-actions{
-        gap:6px;
-    }
-
-    .icon-btn svg{
-        width:22px;
-        height:22px;
-    }
-
-    .main-nav{
-        justify-content:space-between;
-    }
-
-    .nav-link,
-    .nav-tab,
-    .category-trigger{
-        font-size:13px;
-    }
-
-    main{
-        padding:16px 12px 48px;
-    }
-
-    .hero{
-        min-height:390px;
-        border-radius:24px;
-    }
-
-    .hero-copy{
-        min-height:390px;
-        padding:155px 20px 24px;
-    }
-
-    .hero-title{
-        font-size:24px;
-    }
-
-    .hero-sub{
-        font-size:14px;
-    }
-
-    .product-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-        gap:10px;
-    }
-
-    .trust-badges{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .auth-card{
-        padding:26px 20px;
-        margin:24px auto;
-    }
+  .promo-copy { padding: 18px 16px; }
+  .promo-title { font-size: 20px; }
+  .promo-features { gap: 10px; margin-bottom: 16px; }
+  .promo-feature-icon { width: 32px; height: 32px; }
+  .promo-feature-label { font-size: 9px; }
+  .promo-visual { height: 140px; min-height: 140px; }
+  .promo-visual-bg { width: min(150px, 50vw); height: min(150px, 50vw); }
+  .promo-visual img { max-width: 55%; max-height: 55%; }
 }
