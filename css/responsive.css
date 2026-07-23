@@ -37,15 +37,26 @@
         order:2;
         min-width:140px;
     }
-    .hero{
-        border-radius:32px;
+  .hero{
+        border-radius:24px;
+        height:auto;
+        display:flex;
+        flex-direction:column;
     }
-    .hero-copy{
-        width:100%;
-        background:rgba(255,255,255,.55);
+    .hero img{
+        position:static;
+        height:200px;
+        object-fit:cover;
+        border-radius:24px 24px 0 0;
     }
     .hero-overlay{
-        background:rgba(255,255,255,.45);
+        display:none;
+    }
+    .hero-copy{
+        position:static;
+        width:100%;
+        background:var(--color-surface);
+        padding:20px;
     }
     .promo-slide{
         grid-template-columns:1fr;
