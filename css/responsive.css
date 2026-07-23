@@ -28,8 +28,8 @@
 
 @media (max-width: 480px) {
   main { padding: 20px 14px 56px; }
-  .product-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
-  .trust-badges {
+.product-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .product-grid.wide { grid-template-columns: repeat(2, 1fr); gap: 10px; }  .trust-badges {
     grid-template-columns: repeat(4, 1fr);
     gap: 4px;
     padding: 10px 4px;
