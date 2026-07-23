@@ -46,12 +46,18 @@
   .trust-badge-title { font-size: 9.5px; line-height: 1.2; }
   .auth-card { padding: 26px 20px; margin: 24px auto; }
 
-  .promo-copy { padding: 18px 16px; }
+.promo-copy { padding: 18px 16px; }
   .promo-title { font-size: 20px; }
-  .promo-features { gap: 10px; margin-bottom: 16px; }
-  .promo-feature-icon { width: 32px; height: 32px; }
-  .promo-feature-label { font-size: 9px; }
+  .promo-features {
+    gap: 6px;
+    margin-bottom: 16px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  .promo-feature { flex: 1 1 0; min-width: 0; }
+  .promo-feature-icon { width: 34px; height: 34px; margin-bottom: 4px; }
+  .promo-feature-icon svg { width: 16px; height: 16px; }
+  .promo-feature-label { font-size: 8.5px; white-space: normal; line-height: 1.15; }
   .promo-visual { height: 140px; min-height: 140px; }
   .promo-visual-bg { width: min(150px, 50vw); height: min(150px, 50vw); }
   .promo-visual img { max-width: 55%; max-height: 55%; }
-}
