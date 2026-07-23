@@ -27,37 +27,103 @@
 }
 
 @media (max-width: 480px) {
-  main { padding: 20px 14px 56px; }
-.product-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .product-grid.wide { grid-template-columns: repeat(2, 1fr); gap: 10px; }  .trust-badges {
+  /* Layout & Main Container */
+  main { 
+    padding: 20px 14px 56px; 
+  }
+
+  /* Product Grids */
+  .product-grid,
+  .product-grid.wide { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px; 
+  }
+
+  /* Trust Badges */
+  .trust-badges {
     grid-template-columns: repeat(4, 1fr);
     gap: 4px;
     padding: 10px 4px;
   }
+
   .trust-badge {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 4px;
   }
-  .trust-badge-icon { width: 32px; height: 32px; }
-  .trust-badge-icon svg { width: 18px; height: 18px; }
-  .trust-badge-sub { display: none; }
-  .trust-badge-title { font-size: 9.5px; line-height: 1.2; }
-  .auth-card { padding: 26px 20px; margin: 24px auto; }
 
-.promo-copy { padding: 18px 16px; }
-  .promo-title { font-size: 20px; }
+  .trust-badge-icon { 
+    width: 32px; 
+    height: 32px; 
+  }
+
+  .trust-badge-icon svg { 
+    width: 18px; 
+    height: 18px; 
+  }
+
+  .trust-badge-title { 
+    font-size: 9.5px; 
+    line-height: 1.2; 
+  }
+
+  .trust-badge-sub { 
+    display: none; 
+  }
+
+  /* Auth & Promo Section */
+  .auth-card { 
+    padding: 26px 20px; 
+    margin: 24px auto; 
+  }
+
+  .promo-copy { 
+    padding: 18px 16px; 
+  }
+
+  .promo-title { 
+    font-size: 20px; 
+  }
+
   .promo-features {
+    display: flex;
     gap: 6px;
     margin-bottom: 16px;
     flex-wrap: nowrap;
     justify-content: space-between;
   }
-  .promo-feature { flex: 1 1 0; min-width: 0; }
-  .promo-feature-icon { width: 34px; height: 34px; margin-bottom: 4px; }
-  .promo-feature-icon svg { width: 16px; height: 16px; }
-  .promo-feature-label { font-size: 8.5px; white-space: normal; line-height: 1.15; }
-  .promo-visual { height: 140px; min-height: 140px; }
-  .promo-visual-bg { width: min(150px, 50vw); height: min(150px, 50vw); }
-  .promo-visual img { max-width: 55%; max-height: 55%; }
+
+  .promo-feature { 
+    flex: 1 1 0; 
+    min-width: 0; 
+  }
+
+  .promo-feature-icon { 
+    width: 34px; 
+    height: 34px; 
+    margin-bottom: 4px; 
+  }
+
+  .promo-feature-icon svg { 
+    width: 16px; 
+    height: 16px; 
+  }
+
+  .promo-feature-label { 
+    font-size: 8.5px; 
+    white-space: normal; 
+    line-height: 1.15; 
+  }
+
+  .promo-visual { 
+    height: 140px; 
+    min-height: 140px; 
+  }
+
+  .promo-visual-bg { 
+    width: min(150px, 50vw); 
+    height: min(150px, 50vw); 
+  }
+}
+  
