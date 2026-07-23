@@ -84,30 +84,64 @@
 
 /* Small mobile */
 @media (max-width:480px){
-    main{
-        padding:20px 14px 56px;
+    .site-header .container{
+        padding:9px 12px 11px;
     }
+
+    .brand svg{
+        width:46px;
+    }
+
+    .header-actions{
+        gap:6px;
+    }
+
+    .icon-btn svg{
+        width:22px;
+        height:22px;
+    }
+
+    .main-nav{
+        justify-content:space-between;
+    }
+
+    .nav-link,
+    .nav-tab,
+    .category-trigger{
+        font-size:13px;
+    }
+
+    main{
+        padding:16px 12px 48px;
+    }
+
+    .hero{
+        min-height:390px;
+        border-radius:24px;
+    }
+
+    .hero-copy{
+        min-height:390px;
+        padding:155px 20px 24px;
+    }
+
+    .hero-title{
+        font-size:24px;
+    }
+
+    .hero-sub{
+        font-size:14px;
+    }
+
     .product-grid{
-        grid-template-columns:repeat(auto-fill,minmax(120px,1fr));
+        grid-template-columns:repeat(2,minmax(0,1fr));
         gap:10px;
     }
-   .promo-visual-bg{
-        width:min(180px,55vw);
-        height:min(180px,55vw);
+
+    .trust-badges{
+        grid-template-columns:1fr 1fr;
     }
-    .promo-visual{
-        height:160px;
-    }
-    .promo-title{
-        font-size:22px;
-    }
-    .promo-feature-icon{
-        width:36px;
-        height:36px;
-    }
-    .promo-copy{
-        padding:20px 18px;
-    }
+
     .auth-card{
         padding:26px 20px;
         margin:24px auto;
