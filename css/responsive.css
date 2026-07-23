@@ -28,48 +28,76 @@
 
 
 @media (max-width: 480px) {
-  main { padding: 20px 14px 56px; }
- 
-  /* Navigation / Header Menu — שורה אחת עם גלילה אופקית */
+  main { 
+    padding: 20px 14px 56px; 
+  }
+
+  /* --- Navigation Fix --- */
+  
+  /* 1. מבטיח שהתפריט עצמו לא יאפשר ירידת שורות בשום אופן */
   .main-nav {
-    display: flex;
-    flex-wrap: nowrap;               /* מונע ירידת שורה */
-    overflow-x: auto;                /* גלילה ימינה/שמאלה אם צר */
-    white-space: nowrap;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
     gap: 12px;
     padding: 6px 0;
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box;
     -webkit-overflow-scrolling: touch;
   }
-  .main-nav::-webkit-scrollbar { display: none; }  /* מסתיר סרגל גלילה */
+
+  /* 2. הסתרת סרגל גלילה */
+  .main-nav::-webkit-scrollbar { 
+    display: none !important; 
+  }
+
+  /* 3. כיול פריטי התפריט והתגיות הפנימיות בתוכם */
   .main-nav .nav-tab,
   .main-nav .category-trigger,
-  .main-nav .nav-link {
+  .main-nav .nav-link,
+  .main-nav > * {
+    display: inline-flex !important;
+    align-items: center;
+    flex-shrink: 0 !important;   /* מונע מהם להצטמצם כדי להכנס בשורה */
+    white-space: nowrap !important;
     font-size: 13px;
-    flex-shrink: 0;                  /* מונע התכווצות פריטי התפריט */
   }
- 
-  .product-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .product-grid.wide { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+  /* --- Rest of Styles --- */
+
+  .product-grid,
+  .product-grid.wide { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px; 
+  }
+
   .trust-badges {
     grid-template-columns: repeat(4, 1fr);
     gap: 4px;
     padding: 10px 4px;
   }
+
   .trust-badge {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 4px;
   }
+
   .trust-badge-icon { width: 32px; height: 32px; }
   .trust-badge-icon svg { width: 18px; height: 18px; }
   .trust-badge-sub { display: none; }
   .trust-badge-title { font-size: 9.5px; line-height: 1.2; }
+
   .auth-card { padding: 26px 20px; margin: 24px auto; }
- 
+
   .promo-copy { padding: 18px 16px; }
   .promo-title { font-size: 20px; }
   .promo-features {
+    display: flex;
     gap: 6px;
     margin-bottom: 16px;
     flex-wrap: nowrap;
@@ -79,6 +107,7 @@
   .promo-feature-icon { width: 34px; height: 34px; margin-bottom: 4px; }
   .promo-feature-icon svg { width: 16px; height: 16px; }
   .promo-feature-label { font-size: 8.5px; white-space: normal; line-height: 1.15; }
+
   .promo-visual { height: 140px; min-height: 140px; }
   .promo-visual-bg { width: min(150px, 50vw); height: min(150px, 50vw); }
   .promo-visual img { max-width: 55%; max-height: 55%; }
