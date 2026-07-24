@@ -19,7 +19,6 @@ const DEMO_USER = {
   address: 'רחוב הדוגמה 1, תל אביב',
   cart: [],
   orders: [],
-  favorites: [],
 };
 // Reads a value from memory and turns it back into an object. If missing / error — returns the fallback
 function readJSON(key, fallback) {
@@ -73,7 +72,7 @@ const storage = {
   setGuestCart(cart) {
     writeJSON(KEYS.GUEST_CART, cart);
   },
-  // --- favorites (a local cache; also synced to the account in the cloud when logged in) ---
+  // --- favorites (saved in the browser, does not depend on login) ---
   // Returns the list of products marked with the red heart (favorites)
   getFavorites() {
     return readJSON(KEYS.FAVORITES, []);
