@@ -1,5 +1,5 @@
 /*
- * login.js — runs only on login.html and draws the login form
+* login.js — runs only on login.html and draws the login form
  * or the signup form (they switch on the same page, no separate page).
  * Visually: a centered white card with an icon, a title, input fields,
  * a wide dark button, and a link to switch between login and signup.
@@ -7,7 +7,7 @@
 (function initLoginPage() {
   const root = document.getElementById('login-page-root');
   if (!root) return;
-  // The page state: which form is shown (login / signup), 
+  // The page state: which form is shown (login / signup),
   // is the password visible, and what is the current error message
   let mode = utils.getQueryParam('mode') === 'signup' ? 'signup' : 'login';
   let showPassword = false;
@@ -91,8 +91,6 @@
       const user = users.find((u) => u.email === email && u.password === password);
       if (!user) { error = 'אימייל או סיסמה שגויים'; renderLogin(); return; }
       storage.setSessionEmail(user.email);
-      // brings this account's saved favorites (from the cloud) into the local cache
-      await favoritesApi.loadFromAccount();
       router.goTo(router.home());
       return;
     }
@@ -101,13 +99,11 @@
       const email = document.getElementById('signup-email').value.trim();
       const password = document.getElementById('signup-password').value.trim();
       const address = document.getElementById('signup-address').value.trim();
-      if (!/^\S+@\S+\.\S+$/.test(email)) { error = 'כתובת אימייל לא תקינה'; renderSignup(); return; }
+if (!/^\S+@\S+\.\S+$/.test(email)) { error = 'כתובת אימייל לא תקינה'; renderSignup(); return; }
       if (password.length < 6) { error = 'הסיסמה חייבת להכיל לפחות 6 תווים'; renderSignup(); return; }
       const users = await api.getUsers();
       if (users.find((u) => u.email === email)) { error = 'קיים כבר משתמש עם אימייל זה'; renderSignup(); return; }
-      // carry over anything the guest already starred, so it isn't lost on signup
-      const guestFavs = storage.getFavorites();
-      const newUser = { name, email, password, address, cart: [], orders: [], favorites: guestFavs };
+      const newUser = { name, email, password, address, cart: [], orders: [] };
       await api.saveUsers([...users, newUser]);
       storage.setSessionEmail(newUser.email);
       router.goTo(router.home());
