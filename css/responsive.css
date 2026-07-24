@@ -28,123 +28,30 @@
 
 
 @media (max-width: 480px) {
-  main { 
-    padding: 20px 14px 56px; 
-  }
-
-  /* =========================================================
-     תיקון ה-HEADER: שורה אחת + לחיצות עובדות בצורה תקינה
-     ========================================================= */
-
-  /* 1. מעטפת ה-Header שומרת על הכל בשורה אחת */
-  .site-header .container,
-  #site-header .header-container,
-  #site-header > div {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-    width: 100%;
-    box-sizing: border-box;
-    overflow: visible; /* חשוב מאוד: מאפשר לתפריטים נפתחים להופיע */
-  }
-
-  /* 2. התפריט הראשי - שורה אחת עם גלילה נקיות בלי לחתוך בלחיצות */
-  .main-nav {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    order: unset;
-    width: auto;
-    flex: 1 1 auto;
-    min-width: 0;
-    gap: 10px;
-    padding: 4px 0;
-    margin: 0;
-    
-    /* מאפשר גלילה חלקה למובייל */
-    overflow-x: auto;
-    overflow-y: visible;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-    touch-action: pan-x; /* מבטיח שמחוות מגע עובדות חלק */
-  }
-
-  /* הסתרת סרגל גלילה מכוער */
-  .main-nav::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* 3. אלמנטים פנימיים בתפריט והכפתור של הקטגוריות */
-  .main-nav .nav-tab,
-  .main-nav .category-trigger,
-  .main-nav .nav-link,
-  .main-nav a,
-  .main-nav button {
-    display: inline-flex;
-    align-items: center;
-    flex-shrink: 0;
-    white-space: nowrap;
-    font-size: 13px;
-    cursor: pointer;
-    pointer-events: auto; /* מאשר לחיצה תקינה */
-    position: relative;
-    z-index: 10;
-  }
-
-  /* 4. שמירה על גודל הגיוני ללוגו, חיפוש ואייקונים שלא ידחקו את התפריט */
-  #site-header .logo,
-  #site-header .logo img,
-  .search-form,
-  #site-header .header-actions {
-    flex-shrink: 0;
-  }
-
-  /* =========================================================
-     עיצוב שאר הרכיבים בדף הבית
-     ========================================================= */
-
-  .product-grid,
-  .product-grid.wide { 
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 10px; 
-  }
-
+  main { padding: 20px 14px 56px; }
+  .product-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
   .trust-badges {
     grid-template-columns: repeat(4, 1fr);
     gap: 4px;
     padding: 10px 4px;
   }
-
   .trust-badge {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 4px;
   }
-
   .trust-badge-icon { width: 32px; height: 32px; }
   .trust-badge-icon svg { width: 18px; height: 18px; }
   .trust-badge-sub { display: none; }
   .trust-badge-title { font-size: 9.5px; line-height: 1.2; }
-
   .auth-card { padding: 26px 20px; margin: 24px auto; }
 
   .promo-copy { padding: 18px 16px; }
   .promo-title { font-size: 20px; }
-  .promo-features {
-    display: flex;
-    gap: 6px;
-    margin-bottom: 16px;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-  }
-  .promo-feature { flex: 1 1 0; min-width: 0; }
-  .promo-feature-icon { width: 34px; height: 34px; margin-bottom: 4px; }
-  .promo-feature-icon svg { width: 16px; height: 16px; }
-  .promo-feature-label { font-size: 8.5px; white-space: normal; line-height: 1.15; }
-
+  .promo-features { gap: 10px; margin-bottom: 16px; }
+  .promo-feature-icon { width: 32px; height: 32px; }
+  .promo-feature-label { font-size: 9px; }
   .promo-visual { height: 140px; min-height: 140px; }
   .promo-visual-bg { width: min(150px, 50vw); height: min(150px, 50vw); }
   .promo-visual img { max-width: 55%; max-height: 55%; }
