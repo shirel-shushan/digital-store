@@ -7,7 +7,7 @@
 (function initLoginPage() {
   const root = document.getElementById('login-page-root');
   if (!root) return;
-  // The page state: which form is shown (login / signup),
+  // The page state: which form is shown (login / signup), 
   // is the password visible, and what is the current error message
   let mode = utils.getQueryParam('mode') === 'signup' ? 'signup' : 'login';
   let showPassword = false;
