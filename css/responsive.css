@@ -33,65 +33,72 @@
   }
 
   /* =========================================================
-     תיקון התפריט: ביטול ההגדרות מ-720px והפיכה לשורה אחת
+     תיקון ה-HEADER: שורה אחת + לחיצות עובדות בצורה תקינה
      ========================================================= */
 
-  /* 1. דריסת ה-width: 100% וה-order מכלל ה-720px */
+  /* 1. מעטפת ה-Header שומרת על הכל בשורה אחת */
+  .site-header .container,
+  #site-header .header-container,
+  #site-header > div {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: visible; /* חשוב מאוד: מאפשר לתפריטים נפתחים להופיע */
+  }
+
+  /* 2. התפריט הראשי - שורה אחת עם גלילה נקיות בלי לחתוך בלחיצות */
   .main-nav {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    white-space: nowrap !important;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    order: unset;
+    width: auto;
+    flex: 1 1 auto;
+    min-width: 0;
+    gap: 10px;
+    padding: 4px 0;
+    margin: 0;
     
-    order: unset !important;       /* מבטל את ההורדה לשורה נפרדת */
-    width: auto !important;        /* מבטל את ה-width: 100% שמכריח ירידת שורה */
-    flex: 1 1 auto !important;     /* תופס את המקום הפנוי במרכז */
-    min-width: 0 !important;       /* מאפשר גלילה אופקית בתוך flex */
-    
-    gap: 10px !important;
-    padding: 4px 0 !important;
-    margin: 0 !important;
+    /* מאפשר גלילה חלקה למובייל */
+    overflow-x: auto;
+    overflow-y: visible;
+    white-space: nowrap;
     -webkit-overflow-scrolling: touch;
+    touch-action: pan-x; /* מבטיח שמחוות מגע עובדות חלק */
   }
 
-  /* 2. הסתרת סרגל הגלילה */
+  /* הסתרת סרגל גלילה מכוער */
   .main-nav::-webkit-scrollbar {
-    display: none !important;
+    display: none;
   }
 
-  /* 3. שמירה על הפריטים בשורה אחת ללא התכווצות */
+  /* 3. אלמנטים פנימיים בתפריט והכפתור של הקטגוריות */
   .main-nav .nav-tab,
   .main-nav .category-trigger,
   .main-nav .nav-link,
   .main-nav a,
-  .main-nav button,
-  .main-nav > * {
-    display: inline-flex !important;
-    align-items: center !important;
-    flex-shrink: 0 !important;
-    white-space: nowrap !important;
-    font-size: 13px !important;
+  .main-nav button {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: 13px;
+    cursor: pointer;
+    pointer-events: auto; /* מאשר לחיצה תקינה */
+    position: relative;
+    z-index: 10;
   }
 
-  /* 4. איפוס המעטפת של ה-Header להחזקת כל הרכיבים בשורה אחת */
-  .site-header .container,
-  #site-header .header-container,
-  #site-header > div {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    gap: 8px !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
+  /* 4. שמירה על גודל הגיוני ללוגו, חיפוש ואייקונים שלא ידחקו את התפריט */
   #site-header .logo,
   #site-header .logo img,
   .search-form,
   #site-header .header-actions {
-    flex-shrink: 0 !important;
+    flex-shrink: 0;
   }
 
   /* =========================================================
@@ -100,26 +107,26 @@
 
   .product-grid,
   .product-grid.wide { 
-    grid-template-columns: repeat(2, 1fr) !important; 
-    gap: 10px !important; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px; 
   }
 
   .trust-badges {
-    grid-template-columns: repeat(4, 1fr) !important;
-    gap: 4px !important;
-    padding: 10px 4px !important;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    padding: 10px 4px;
   }
 
   .trust-badge {
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    gap: 4px !important;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
   }
 
   .trust-badge-icon { width: 32px; height: 32px; }
   .trust-badge-icon svg { width: 18px; height: 18px; }
-  .trust-badge-sub { display: none !important; }
+  .trust-badge-sub { display: none; }
   .trust-badge-title { font-size: 9.5px; line-height: 1.2; }
 
   .auth-card { padding: 26px 20px; margin: 24px auto; }
@@ -127,13 +134,13 @@
   .promo-copy { padding: 18px 16px; }
   .promo-title { font-size: 20px; }
   .promo-features {
-    display: flex !important;
-    gap: 6px !important;
-    margin-bottom: 16px !important;
-    flex-wrap: nowrap !important;
-    justify-content: space-between !important;
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
   }
-  .promo-feature { flex: 1 1 0 !important; min-width: 0 !important; }
+  .promo-feature { flex: 1 1 0; min-width: 0; }
   .promo-feature-icon { width: 34px; height: 34px; margin-bottom: 4px; }
   .promo-feature-icon svg { width: 16px; height: 16px; }
   .promo-feature-label { font-size: 8.5px; white-space: normal; line-height: 1.15; }
